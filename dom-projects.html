@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+</head>
+<body>
+    <!--Lets make this Youtube Button interactive-->
+    <!--Figure out what steps we need (algorithm)
+    Then we convert these steps into code
+     steps
+     when we click the button,
+     1.if the text is "Subscribe" => "Subscribed"
+     2.otherwise, change it back => "subscribe"-->
+
+
+  <!-- Header for the YouTube subscribe button example -->
+  <p>Youtube Subscribe Button</p>
+  <!-- Subscribe button with an onclick event that calls the subscribe function -->
+  <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
+   
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input">
+    <button onclick="calculateTotal();">Calculate</button>
+    <p class="js-total-cost"></p>
+    
+  <script>
+    // Select the input element and get its value
+   function calculateTotal () {
+      const inputElement = document.querySelector('.js-cost-input');
+      let cost = Number(inputElement.value); // Convert to a number
+
+      if (cost < 40) {  // Check if the cost is less than 40
+        cost = cost + 10; // If so, add 10 to the cost
+      }
+     // Display the total cost in the paragraph with class 'js-total-cost'
+      document.querySelector('.js-total-cost')
+       .innerHTML = `$${cost}`; // The first dollar sign $ is just a regular character in the string, representing the currency symbol.
+   }
+
+
+
+    function subscribe() {
+        // Select the button element with the class 'js-subscribe-button'
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        // Check the current text of the button
+        if (buttonElement.innerText === 'Subscribe') {
+          // If the button text is 'Subscribe', change it to 'Subscribed'
+          buttonElement.innerHTML = 'Subscribed';
+        } else {
+          // If the button text is anything else (e.g., 'Subscribed'), change it back to 'Subscribe'
+          buttonElement.innerHTML = 'Subscribe';
+        }
+      }
+  </script>
+</body>
+
+</html>
