@@ -22,11 +22,20 @@
   <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
    
     <p>Amazon Shipping Calculator</p>
-    <input placeholder="Cost of order" class="js-cost-input">
+    <input placeholder="Cost of order" class="js-cost-input" onkeydown="console.log(event.key)// This attribute sets up an event handler that runs JavaScript code whenever a key is pressed while the input is focused.
+    handleCostKeydown(event);"><!--Calls the handleCostKeydown function and passes the event object as an argument.-->
+    
     <button onclick="calculateTotal();">Calculate</button>
     <p class="js-total-cost"></p>
     
   <script>
+
+    function handleCostKeydown(event) { 
+      // If the Enter key is pressed, calculate the total cost
+      if (event.key === 'Enter') {
+        calculateTotal();
+      }
+    }
     // Select the input element and get its value
    function calculateTotal () {
       const inputElement = document.querySelector('.js-cost-input');
