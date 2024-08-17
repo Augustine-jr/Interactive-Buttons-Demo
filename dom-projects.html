@@ -5,6 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM Projects</title>
+  <style>
+    /* Styling for the button */
+    .subscribe-button {
+       background-color: black;
+       color: white;
+       padding-top: 0.625rem;
+       padding-bottom: 0.625rem;
+       padding-left: 0.9375rem;
+       padding-right: 0.9375rem;
+       border: none;
+       font-weight: bold;
+       border-radius: 3.125rem;
+       cursor: pointer;
+    }
+
+    .is-subscribed {
+      background-color: rgb(240,240,240);
+      color: black;
+    }
+  </style>
 </head>
 <body>
     <!--Lets make this Youtube Button interactive-->
@@ -19,7 +39,7 @@
   <!-- Header for the YouTube subscribe button example -->
   <p>Youtube Subscribe Button</p>
   <!-- Subscribe button with an onclick event that calls the subscribe function -->
-  <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
+  <button onclick="subscribe();" class="js-subscribe-button subscribe-button">Subscribe</button>
    
     <p>Amazon Shipping Calculator</p>
     <input placeholder="Cost of order" class="js-cost-input" onkeydown="console.log(event.key)// This attribute sets up an event handler that runs JavaScript code whenever a key is pressed while the input is focused.
@@ -59,9 +79,11 @@
         if (buttonElement.innerText === 'Subscribe') {
           // If the button text is 'Subscribe', change it to 'Subscribed'
           buttonElement.innerHTML = 'Subscribed';
+          buttonElement.classList.add('is-subscribed') // classList gives us control of the class attribute
         } else {
           // If the button text is anything else (e.g., 'Subscribed'), change it back to 'Subscribe'
           buttonElement.innerHTML = 'Subscribe';
+          buttonElement.classList.remove('is-subscribed') // remove the class
         }
       }
   </script>
