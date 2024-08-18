@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM Projects</title>
   <style>
+
+@import url('https://fonts.cdnfonts.com/css/poppins');
+*{
+  font-family: 'Poppins', sans-serif;                                            
+}
+
+body {
+      font-family: Poppins, sans-serif;
+    }
+                                              
     /* Styling for the button */
     .subscribe-button {
        background-color: black;
@@ -18,12 +28,29 @@
        font-weight: bold;
        border-radius: 3.125rem;
        cursor: pointer;
-    }
+       margin-bottom: 1.875rem;
+      }
 
     .is-subscribed {
       background-color: rgb(240,240,240);
       color: black;
     }
+
+    .cost-input {
+      font-size: 0.9375rem;
+      padding: 0.625rem;
+    }
+
+    .calculate-button {
+      background-color: green;
+      color: white;
+      border: none;
+      font-size: 0.9375rem;
+      padding: 0.75rem 0.9375rem;
+      cursor: pointer;
+    }
+
+    
   </style>
 </head>
 <body>
@@ -37,15 +64,15 @@
 
 
   <!-- Header for the YouTube subscribe button example -->
-  <p>Youtube Subscribe Button</p>
-  <!-- Subscribe button with an onclick event that calls the subscribe function -->
-  <button onclick="subscribe();" class="js-subscribe-button subscribe-button">Subscribe</button>
-   
+    <p>Youtube Subscribe Button</p>
+    <!-- Subscribe button with an onclick event that calls the subscribe function -->
+    <button onclick="subscribe();" class="js-subscribe-button subscribe-button">Subscribe</button>
+ 
     <p>Amazon Shipping Calculator</p>
-    <input placeholder="Cost of order" class="js-cost-input" onkeydown="console.log(event.key)// This attribute sets up an event handler that runs JavaScript code whenever a key is pressed while the input is focused.
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="console.log(event.key)// This attribute sets up an event handler that runs JavaScript code whenever a key is pressed while the input is focused.
     handleCostKeydown(event);"><!--Calls the handleCostKeydown function and passes the event object as an argument.-->
     
-    <button onclick="calculateTotal();">Calculate</button>
+    <button onclick="calculateTotal();"  class="calculate-button">Calculate</button>
     <p class="js-total-cost"></p>
     
   <script>
