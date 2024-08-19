@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Lets make this Youtube Button interactive-->
+    <!--Figure out what steps we need (algorithm)
+    Then we convert these steps into code
+     steps
+     when we click the button,
+     1.if the text is "Subscribe" => "Subscribed"
+     2.otherwise, change it back => "subscribe"-->
+
+
+  <!-- Header for the YouTube subscribe button example -->
+   <div class="subscribe-container">
+    <p>Youtube Subscribe Button</p>
+    <!-- Subscribe button with an onclick event that calls the subscribe function -->
+    <button onclick="subscribe();" class="js-subscribe-button subscribe-button">Subscribe</button>
+   </div>
+   
+  <div class="calculator-container">
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="console.log(event.key)// This attribute sets up an event handler that runs JavaScript code whenever a key is pressed while the input is focused.
+        handleCostKeydown(event);"><!--Calls the handleCostKeydown function and passes the event object as an argument.-->
+    
+    <button onclick="calculateTotal();" class="calculate-button">Calculate</button>
+    <p class="js-total-cost"></p>
+  </div>
+    
+  <script src="main.js"></script>
+</body>
+
+</html>
